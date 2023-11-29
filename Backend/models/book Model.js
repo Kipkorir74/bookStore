@@ -1,4 +1,6 @@
-const mongoose=require("mongoose")
+const mongoose=require('mongoose')
+
+const Schema = mongoose.Schema;
 
 const bookSchema = mongoose.Schema (
     {
@@ -18,4 +20,4 @@ const bookSchema = mongoose.Schema (
     },
     {timestamps:true}
 )
-module.export = mongoose.model('Bookstore', bookSchema)
+module.exports = mongoose.model("Bookstore", bookSchema)

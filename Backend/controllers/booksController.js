@@ -59,8 +59,9 @@ const createBook = async (req, res) => {
 
     try {
         // const user_id = req.user._id
-        // Create a new workout document using the Mongoose model workoutModel.
+        // Create a new workout document using the Mongoose model booksModel.
         const book = await booksModel.create({ title, author, publishYear})
+
         // Respond with a 200 (OK) status code and the created workout as JSON.
         res.status(200).json(book)
     }
