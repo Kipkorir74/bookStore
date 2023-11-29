@@ -2,7 +2,7 @@ import React from 'react'
 
 const displayBook = () => {
   return (
-    <div class='bg-orange-400'>
+    <div class="bg-">
       Display Book
     </div>
   )

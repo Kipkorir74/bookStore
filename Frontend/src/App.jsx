@@ -22,16 +22,16 @@ const App = () => {
         />
 
         <Route
-          path='/display'
+          path='/display/:id'
           element={<DisplayBook />}
         />
 
         <Route
-          path='/delete'
+          path='/delete/:id'
           element={<DeleteBook />}
         />
         <Route
-          path='/edit'
+          path='/edit/:id'
           element={<EditBook />}
         />
       </Routes>
