@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import { BiUserCircle } from 'react-icons/bi';
+import { BiUserCircle, BiShow } from 'react-icons/bi';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineDelete } from 'react-icons/md';
 import { PiBookOpenTextLight } from 'react-icons/pi'
+import BookModal from './BookModal';
 
 const BooksCard = ({ books }) => {
+    const [showModal, setShowModal] = useState(false)
     return (
         <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
             {
@@ -28,6 +30,13 @@ const BooksCard = ({ books }) => {
                             <h2 className='my-1'>{item.author}</h2>
                         </div>
                         <div className='flex justify-between items-center gap-x-3 mt-4 p-2'>
+                            
+                            <BiShow
+                                className='text-3xl text-blue-800 hover:text-black cursor-pointer'
+
+                                onClick={()=>setShowModal(true)}
+                            />
+                            
                             <Link to={`/display/${item._id}`}>
                                 <BsInfoCircle className='text-2xl text-green-800 hover:text-black' />
                             </Link>
@@ -40,6 +49,11 @@ const BooksCard = ({ books }) => {
                         </div>
                     </div>
                 ))
+            }
+            {
+              showModal && (
+                <BookModal books={books} onClose={()=>setShowModal(false)}/> 
+              )  
             }
         </div>
     )
