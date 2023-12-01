@@ -29,6 +29,7 @@ const deleteFile = () => {
 
   return (
     <div class="p-4">
+      <BackButton />
       <h1 className='text-3xl my-4'>Delete Book</h1>
       {
         loading ? <Spinner /> : ''
@@ -37,7 +38,7 @@ const deleteFile = () => {
       <div className='flex flex-col border-2 border-sky-700 rounded-xl w-[600px] p-8 mx-auto'>
 
         <h3 className='text-2xl'>Confirm if you want to delete the Book</h3>
-        <button className='p-4 bg-red-700 text-white m-8 w-full' onClick={handleDelete}>
+        <button className='p-4 bg-red-700 text-white mx-auto mt-4 w-full' onClick={handleDelete}>
           Delete
         </button>
       </div>
